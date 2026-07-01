@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module sync_reg #(
-    parameter int DATA_WIDTH = 32
+    parameter int DATA_WIDTH = 8
 )(
     input logic CLK,
     input logic RST_N,
