@@ -4,6 +4,7 @@
 
 module vector_register_file (
     input  logic           CLK,
+    input  logic           RST_N,
 
     // --- Read Port A (Source Operand 1) ---
     input  logic [7:0]     READ_ADDR_A,
@@ -24,6 +25,14 @@ module vector_register_file (
     // 256-bit wide vectors, 256 rows deep (8 warps * 32 registers)
     // -------------------------------------------------------------------------
     logic [255:0] vrf_mem_s [0:255];
+
+    integer i;
+
+    initial begin
+        for (i = 0; i < 256; i++) begin
+            vrf_mem_s[i] = 0;
+        end
+    end
 
     // -------------------------------------------------------------------------
     // Synchronous read and write logic

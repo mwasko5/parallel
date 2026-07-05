@@ -9,11 +9,11 @@ module alu (
 
     always_comb begin
         case (OP_SEL)
-            1'b00: // ADD
+            2'b00: // ADD
                 OUT = IN_A + IN_B;
-            1'b01: // SUB
+            2'b01: // SUB
                 OUT = IN_A - IN_B;
-            1'b10: // MUL
+            2'b10: // MUL
                 OUT = IN_A[15:0] * IN_B[15:0];
             default:
                 OUT = IN_A + IN_B;

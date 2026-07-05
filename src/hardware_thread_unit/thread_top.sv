@@ -25,6 +25,7 @@ module thread_top (
 
     vector_register_file vrf_1 (
         .CLK(CLK),
+        .RST_N(RST_N),
 
         .READ_ADDR_A(READ_ADDR_A),
         .READ_DATA_A(read_data_a_s),
